@@ -1,0 +1,23 @@
+{
+  "name": "zhaojiaxuan/ethereal-skeleton",
+  "description": "Ethereal Framework Skeleton",
+  "type": "project",
+  "require": {
+    "php": ">=8.0.0",
+    "zhaojiaxuan/ethereal-framework": "^1.0"
+  },
+  "authors": [
+    {
+      "name": "ZhaoJiaXuan",
+      "email": "2687409344@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    },
+    "files": [
+      "app/helpers.php"
+    ]
+  }
+}
