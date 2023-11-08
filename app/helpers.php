@@ -8,12 +8,13 @@ function app(string $name = null)
 
 function response(mixed $data,int $code=200,array $header=[]):\Ethereal\http\Response
 {
-    return app('response')->setContent($data)->setCode($code)->setHeaders($header)->send();
+    $header['Content-Type'] = 'text/html; charset=utf-8';
+    return app('response')->setContent($data)->setCode($code)->setHeaders($header);
 }
 
 function view(string $path,array $params = []): \Ethereal\http\Response
 {
-    return response(app(\Ethereal\view\ViewInterface::class)->render($path,$params));
+    return response(app(\Ethereal\view\ViewInterface::class)->render($path,$params),200,['Content-Type'=>'text/html; charset=utf-8']);
 }
 
 function config(string $key = null)

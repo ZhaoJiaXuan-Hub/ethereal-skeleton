@@ -3,6 +3,7 @@
 namespace App\controller;
 
 use App\middleware\DefaultMiddleware;
+use App\model\Test;
 use Ethereal\Controller;
 use Ethereal\http\RequestInterface;
 use Ethereal\http\Response;
@@ -15,10 +16,7 @@ class IndexController extends Controller
 
     public function index (RequestInterface $request): Response
     {
-        return response([
-            'method'    =>  $request->getMethod(),
-            'url'   =>  $request->getUri()
-        ]);
+        return response("Hello,world!");
     }
 
     public function json (RequestInterface $request): Response
@@ -28,7 +26,7 @@ class IndexController extends Controller
             'message'   =>  "获取成功",
             'data'  =>  [
                 'method'    =>  $request->getMethod(),
-                'uri'   =>  $request->getUri(),
+                'uri'   =>  $request->getUri()
             ]
         ]);
     }

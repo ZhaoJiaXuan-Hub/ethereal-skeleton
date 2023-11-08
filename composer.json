@@ -3,7 +3,7 @@
   "description": "Ethereal Framework Skeleton",
   "type": "project",
   "require": {
-    "php": ">=8.0.0",
+    "php": ">=8.1.0",
     "zhaojiaxuan/ethereal-framework": "^1.0"
   },
   "authors": [

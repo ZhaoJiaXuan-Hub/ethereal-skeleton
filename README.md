@@ -14,10 +14,10 @@
 `响应`
 `日志`
 `异常托管`
+`swoole`
 
 ### 未来可能支持
 
-`swoole`
 `workerman`
 `aop`
 `env`
@@ -33,3 +33,13 @@
 ### 更新
 
 `composer update zhaojiaxuan/ethereal-framework`
+
+### 启动
+
+#### FPM服务器
+
+`运行文件 public/index.php`
+
+#### Swoole-HTTP
+
+`启动指令 php ./bin/swoole.php start`
