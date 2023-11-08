@@ -5,7 +5,10 @@ ini_set('display_startup_errors', 'on');
 ini_set('memory_limit', '1G');
 error_reporting(E_ALL);
 require_once __DIR__ . '/../vendor/autoload.php';
-
+const STORAGE_PATH = BASE_PATH . '/runtime/storage';
+// 目录不存在自动创建
+if (!is_dir(STORAGE_PATH))
+    mkdir(STORAGE_PATH, 0777, true);
 use Ethereal\http\Request;
 use Ethereal\http\RequestInterface;
 use Ethereal\swoole\Context;
@@ -69,10 +72,9 @@ $start = function () {
 };
 
 $stop = function () {
-
-    if (!file_exists(BASE_PATH . '/runtime/storage/swoole.pid'))
+    if (!file_exists(STORAGE_PATH . '/swoole.pid'))
         return;
-    $pid = file_get_contents(BASE_PATH . '/runtime/storage/swoole.pid');
+    $pid = file_get_contents(STORAGE_PATH . '/swoole.pid');
     Swoole\Process::kill($pid);
 };
 
